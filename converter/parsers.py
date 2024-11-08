@@ -79,7 +79,11 @@ class TablatureMeasureParser(xmlToM21.MeasureParser):
     def xmlToSimpleNote(self, mxNote, freeSpanners=True) -> TablatureNote | Unpitched:
         simple =  super().xmlToSimpleNote(mxNote, freeSpanners)
         if isinstance(simple, Note):
-            string, fret = self.xmlToTechnical(mxNote)
+            string = None
+            fret = None
+            technical = self.xmlToTechnical(mxNote)
+            if technical is not None:
+                string, fret = technical
             return TablatureNote(simple, string, fret)
         
         return simple
@@ -100,11 +104,15 @@ class TablatureMeasureParser(xmlToM21.MeasureParser):
             frets = mxTechnical.findall('fret')
             tablature = [(int(s.text), int(f.text)) for s, f in zip(strings, frets)]
 
+        if tablature is None:
+            return chord
+
         # add tabs to the notes past idx 0
         for note, (string, fret) in zip(chord.notes, tablature):
-            note.string = string
-            note.fret = fret
-        
+            if note.string is None or note.fret is None:
+                note.string = string
+                note.fret = fret
+            
         return chord
         
     def xmlToTechnical(self, mxNote):
