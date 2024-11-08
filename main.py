@@ -1,6 +1,6 @@
 import music21
 
-from tab_converter.tab_converter import tab_converter_parse
+from converter.tab_converter import tab_converter_parse
 
 def main():
     score = tab_converter_parse("example_scores/fearless.xml")

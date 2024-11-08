@@ -1,48 +1,14 @@
 import typing as t
 import warnings
 
-from xml.etree.ElementTree import Element
-from music21.converter.subConverters import ConverterMusicXML
-from music21.musicxml import xmlToM21
 from music21.note import Note, Unpitched, Rest
 from music21.stream.base import Measure
 from music21.musicxml.xmlObjects import MusicXMLImportException, MusicXMLWarning
-from music21.stream import Score
+from music21.musicxml import xmlToM21
 
+from xml.etree.ElementTree import Element
 
-def tab_converter_parse(file_path: str) -> Score:
-    c = TabulatureConverterMusicXML()
-    
-    # parse file
-    content = None
-    with open(file_path) as f:
-        content = f.read()
-    
-    c.parseData(content)
-    return c.stream
-
-class TabulatureConverterMusicXML(ConverterMusicXML):
-    def __init__(self, **keywords) -> None:
-        super().__init__(**keywords)
-    
-    def parseData(self, xmlString: str, number=None):
-        c = TabulatureMusicXMLImporter()
-        c.xmlText = xmlString
-        c.parseXMLText()
-        self.stream = c.stream
-
-
-class TabulatureMusicXMLImporter(xmlToM21.MusicXMLImporter):
-    def __init__(self):
-        super().__init__()
-    
-    def xmlPartToPart(self, mxPart, mxScorePart):
-        parser = TabulaturePartParser(mxPart, mxScorePart=mxScorePart, parent=self)
-        parser.parse()
-        if parser.appendToScoreAfterParse is True:
-            return parser.stream
-        else:
-            return None
+from common.tabulature_note import TabulatureNote
 
 class TabulaturePartParser(xmlToM21.PartParser):
     def __init__(self, mxPart: Element | None = None, mxScorePart: Element | None = None, parent: xmlToM21.MusicXMLImporter | None = None):
@@ -110,6 +76,10 @@ class TabulatureMeasureParser(xmlToM21.MeasureParser):
     def __init__(self, mxMeasure: Element | None = None, parent: xmlToM21.PartParser | None = None):
         super().__init__(mxMeasure, parent)
      
-    # TODO   
-    def xmlToSimpleNote(self, mxNote, freeSpanners=True) -> Note | Unpitched:
-        return super().xmlToSimpleNote(mxNote, freeSpanners)
+    # TODO use the super() output and additionally add tabulature data
+    def xmlToSimpleNote(self, mxNote, freeSpanners=True) -> TabulatureNote | Unpitched:
+        simple =  super().xmlToSimpleNote(mxNote, freeSpanners)
+        if isinstance(simple, Note):
+            return TabulatureNote(simple)
+        
+        return simple
