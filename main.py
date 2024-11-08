@@ -5,7 +5,11 @@ from converter.tab_converter import tab_converter_parse
 def main():
     score = tab_converter_parse("example_scores/fearless.xml")
     for x in score.flatten().notes:
-        print(x.duration.fullName, [p.name for p in x.pitches])    
+        if isinstance(x, music21.chord.Chord):
+            print(x.duration.fullName, [(n.pitch.name, n.string, n.fret) for n in x.notes])   
+        else:
+            print(x.duration.fullName, [(x.pitch.name, x.string, x.fret)])
+         
 
 if __name__=="__main__":
     main()

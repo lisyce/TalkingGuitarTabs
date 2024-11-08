@@ -76,10 +76,41 @@ class TablatureMeasureParser(xmlToM21.MeasureParser):
     def __init__(self, mxMeasure: Element | None = None, parent: xmlToM21.PartParser | None = None):
         super().__init__(mxMeasure, parent)
      
-    # TODO use the super() output and additionally add tabulature data
     def xmlToSimpleNote(self, mxNote, freeSpanners=True) -> TablatureNote | Unpitched:
         simple =  super().xmlToSimpleNote(mxNote, freeSpanners)
         if isinstance(simple, Note):
-            return TablatureNote(simple)
+            string, fret = self.xmlToTechnical(mxNote)
+            return TablatureNote(simple, string, fret)
         
         return simple
+    
+    def xmlToChord(self, mxNoteList):
+        chord = super().xmlToChord(mxNoteList)
+
+        # get the tablature info for the chord from the first note
+        tablature = None
+        mxNotations = mxNoteList[0].find('notations')
+        if mxNotations is not None:
+            mxTechnical = mxNotations.find('technical')
+            if mxTechnical is None:
+                return chord
+
+            # get the string/fret pairs
+            strings = mxTechnical.findall('string')
+            frets = mxTechnical.findall('fret')
+            tablature = [(int(s.text), int(f.text)) for s, f in zip(strings, frets)]
+
+        # add tabs to the notes past idx 0
+        for note, (string, fret) in zip(chord.notes, tablature):
+            note.string = string
+            note.fret = fret
+        
+        return chord
+        
+    def xmlToTechnical(self, mxNote):
+        mxNotations = mxNote.find('notations')
+        if mxNotations is not None:
+            mxTechnical = mxNotations.find('technical')
+            if mxTechnical is None:
+                return None, None
+            return int(mxTechnical.find("string").text), int(mxTechnical.find("fret").text)

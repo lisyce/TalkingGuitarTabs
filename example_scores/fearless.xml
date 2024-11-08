@@ -569,8 +569,8 @@
       <note default-x="84.99" default-y="0">
         <chord />
         <pitch>
-          <step>A</step>
-          <alter>1</alter>
+          <step>B</step>
+          <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>5040</duration>

@@ -1,7 +1,8 @@
 from music21.note import Note
 
 class TablatureNote(Note):
-    # TODO tabulature init
-    def __init__(self, simple_note: Note, **keywords):
-        super().__init__(simple_note.pitch, name=simple_note.name, nameWithOctave=simple_note.nameWithOctave, **keywords)
-        
+    def __init__(self, simple_note: Note, string: int, fret: int):
+        super().__init__(**simple_note.__dict__)
+        self.duration = simple_note.duration
+        self.string = string
+        self.fret = fret
