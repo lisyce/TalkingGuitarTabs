@@ -8,14 +8,14 @@ from music21.musicxml import xmlToM21
 
 from xml.etree.ElementTree import Element
 
-from common.tabulature_note import TabulatureNote
+from common.tablature_note import TablatureNote
 
-class TabulaturePartParser(xmlToM21.PartParser):
+class TablaturePartParser(xmlToM21.PartParser):
     def __init__(self, mxPart: Element | None = None, mxScorePart: Element | None = None, parent: xmlToM21.MusicXMLImporter | None = None):
         super().__init__(mxPart, mxScorePart, parent)
     
     def xmlMeasureToMeasure(self, mxMeasure: Element) -> Measure:
-        measureParser = TabulatureMeasureParser(mxMeasure, parent=self)
+        measureParser = TablatureMeasureParser(mxMeasure, parent=self)
         
         # below code taken from music21.musicxml.xmlToM21 PartParser.xmlMeasureToMeasure
         try:
@@ -72,14 +72,14 @@ class TabulaturePartParser(xmlToM21.PartParser):
 
         return m
 
-class TabulatureMeasureParser(xmlToM21.MeasureParser):
+class TablatureMeasureParser(xmlToM21.MeasureParser):
     def __init__(self, mxMeasure: Element | None = None, parent: xmlToM21.PartParser | None = None):
         super().__init__(mxMeasure, parent)
      
     # TODO use the super() output and additionally add tabulature data
-    def xmlToSimpleNote(self, mxNote, freeSpanners=True) -> TabulatureNote | Unpitched:
+    def xmlToSimpleNote(self, mxNote, freeSpanners=True) -> TablatureNote | Unpitched:
         simple =  super().xmlToSimpleNote(mxNote, freeSpanners)
         if isinstance(simple, Note):
-            return TabulatureNote(simple)
+            return TablatureNote(simple)
         
         return simple

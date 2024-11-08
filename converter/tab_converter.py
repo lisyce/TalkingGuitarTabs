@@ -1,9 +1,9 @@
 from music21.stream import Score
 
-from .converters import TabulatureConverterMusicXML
+from .converters import TablatureConverterMusicXML
 
 def tab_converter_parse(file_path: str) -> Score:
-    c = TabulatureConverterMusicXML()
+    c = TablatureConverterMusicXML()
     
     # parse file
     content = None
