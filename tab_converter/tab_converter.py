@@ -36,15 +36,18 @@ class TabulatureMusicXMLImporter(xmlToM21.MusicXMLImporter):
     def __init__(self):
         super().__init__()
     
-    # TODO
     def xmlPartToPart(self, mxPart, mxScorePart):
-        return super().xmlPartToPart(mxPart, mxScorePart)
+        parser = TabulaturePartParser(mxPart, mxScorePart=mxScorePart, parent=self)
+        parser.parse()
+        if parser.appendToScoreAfterParse is True:
+            return parser.stream
+        else:
+            return None
 
 class TabulaturePartParser(xmlToM21.PartParser):
     def __init__(self, mxPart: Element | None = None, mxScorePart: Element | None = None, parent: xmlToM21.MusicXMLImporter | None = None):
         super().__init__(mxPart, mxScorePart, parent)
     
-    # TODO
     def xmlMeasureToMeasure(self, mxMeasure: Element) -> Measure:
         measureParser = TabulatureMeasureParser(mxMeasure, parent=self)
         
