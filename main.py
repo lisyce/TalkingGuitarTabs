@@ -1,10 +1,14 @@
 import music21
 
 from converter.tab_converter import tab_converter_parse
+from needs_named import tab_part, measure_data
 
 def main():
-    score = tab_converter_parse("example_scores/Dance_of_the_Moonlight_Jellies.musicxml")
-    print(len(score.parts))
+    score = tab_converter_parse("example_scores/BellaCiao.musicxml")
+    tabs = tab_part(score)
+    
+    measure_data(tabs)
+    
     # for x in score.measures(1, 4):
     #     print(x)
         # if isinstance(x, music21.chord.Chord):
