@@ -1,7 +1,7 @@
 from typing import List
 
 from music21.stream import Score, Part, Measure
-from music21 import clef, note, chord
+from music21 import clef, note, chord, tempo
 
 from common.measure_data import MeasureData
 from common.tablature_note import TablatureNote
@@ -16,22 +16,34 @@ def tab_part(score: Score) -> Part:
     
     raise Exception("tablature part not found in score")
 
+# name, composer, measure count, tempo
+def summary_data(score: Score):
+    pass
+    
+
 def measure_data(part: Part) -> List[MeasureData]:
     result = []
     
     curr_key = None
     curr_time = None
+    curr_tempo = None
     for m in part.measures(0, None):
         if type(m) != Measure:  # not sure why this is a thing but we need it
             continue
         
+        tempos = m.metronomeMarkBoundaries()
+        if tempos:
+            t0 = tempos[0][2]
+            curr_tempo = f"{t0.referent.fullName} = {t0.number}"
+            if t0.text:
+                curr_tempo += f" ({t0.text})"
         if m.keySignature is not None:
             curr_key = m.keySignature._strDescription()
         if m.timeSignature is not None:
             curr_time = m.timeSignature.ratioString
         
         descs = [_note_and_rest_to_str(nr) for nr in m.flatten().notesAndRests]
-        result.append(MeasureData(curr_time, curr_key, descs))
+        result.append(MeasureData(curr_time, curr_key, descs, curr_tempo))
         
     return result
 

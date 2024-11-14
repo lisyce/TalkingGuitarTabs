@@ -1,7 +1,5 @@
 # TalkingGuitarTabs
 
-TODO LICENSE
-
 ## Setup
 
 1. Create virtual env: `python -m venv .venv`
