@@ -4,7 +4,7 @@ from converter.tab_converter import tab_converter_parse
 from needs_named import tab_part, measure_data
 
 def main():
-    score = tab_converter_parse("example_scores/BellaCiao.musicxml")
+    score = tab_converter_parse("example_scores/Andante.musicxml")
     tabs = tab_part(score)
     
     measure_data(tabs)
