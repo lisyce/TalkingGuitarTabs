@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Segment Descriptions</title>
+</head>
+<body>
+
+    <!-- Main Title -->
+    <h1>Song Title</h1>
+    <p>{{ title }}</p>
+
+    <!-- Main Title -->
+    <h2>Music Segment Descriptions</h2>
+
+    <!-- Music Segment Description -->
+    <p>{{ description }}</p>
+
+    <!-- Loop through each bar in the description -->
+    {% for bar_index, bar in bars.items() %}
+        <h3>Bars {{ bar_index + 1 }} to {{ bar_index + 2 }}</h3>
+
+        <!-- Bar 1 Details -->
+        <h4>Bar {{ bar_index + 1 }}</h4>
+        <p><strong>Time Signature:</strong> {{ bar.time_signature }}</p>
+        <p><strong>Key:</strong> {{ bar.key }}</p>
+
+        <!-- Notes for Bar -->
+        <ul>
+            {% for note in bar.notes %}
+                <li><strong>{{ note.duration }}</strong>, string #{{ note.string }}, fret #{{ note.fret }}</li>
+            {% endfor %}
+        </ul>
+
+    {% endfor %}
+
+</body>
+</html>
