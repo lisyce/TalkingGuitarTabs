@@ -10,7 +10,8 @@
 
     <!-- File Upload Form -->
     <h2>Upload MusicXML File</h2>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    <!-- Change the form action to '/' -->
+    <form action="/" method="POST" enctype="multipart/form-data">
         <label for="file">Choose a file:</label>
         <input type="file" id="file" name="file" accept=".musicxml" required>
         <button type="submit">Upload</button>

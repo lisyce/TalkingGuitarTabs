@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Segment Descriptions</title>
+    <title>{{ title }}</title>
 </head>
 <body>
 
     <!-- Main Title -->
-    <h1>Song Title</h1>
-    <p>{{ title }}</p>
-
-    <!-- Main Title -->
-    <h2>Music Segment Descriptions</h2>
-
-    <!-- Music Segment Description -->
+    <h1>{{ title }}</h1>
     <p>{{ description }}</p>
 
-    <!-- Loop through each bar in the description -->
-    {% for bar_index, bar in bars.items() %}
-        <h3>Bars {{ bar_index + 1 }} to {{ bar_index + 2 }}</h3>
+    <!-- Music Segment Descriptions -->
+    <h2>Music Segment Descriptions</h2>
 
-        <!-- Bar 1 Details -->
-        <h4>Bar {{ bar_index + 1 }}</h4>
-        <p><strong>Time Signature:</strong> {{ bar.time_signature }}</p>
-        <p><strong>Key:</strong> {{ bar.key }}</p>
+    <!-- Loop through each bar in the description -->
+    {% for bar in bars %}
+        <h3>Bar {{ loop.index }}</h3> <!-- Use loop.index to get the current bar number -->
+
+        <!-- Bar Details -->
+        <p><strong>Time Signature:</strong> {{ bar['time_signature'] }}</p>
+        <p><strong>Key:</strong> {{ bar['key'] }}</p>
 
         <!-- Notes for Bar -->
         <ul>
-            {% for note in bar.notes %}
-                <li><strong>{{ note.duration }}</strong>, string #{{ note.string }}, fret #{{ note.fret }}</li>
+            {% for note in bar['notes'] %}
+                <li><strong>{{ note[0] }}</strong>, string #{{ note[1] }}, fret #{{ note[2] }}</li>
             {% endfor %}
         </ul>
 
