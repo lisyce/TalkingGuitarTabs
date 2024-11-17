@@ -9,10 +9,10 @@
 
     <!-- Main Title -->
     <h1>{{ title }}</h1>
-    <p>{{ description }}</p>
 
     <!-- Music Segment Descriptions -->
-    <h2>Music Segment Descriptions</h2>
+    <h2>Song Summary</h2>
+    <p>{{ description }}</p>
 
     <!-- Loop through each bar in the description -->
     {% for bar in bars %}
@@ -25,7 +25,7 @@
         <!-- Notes for Bar -->
         <ul>
             {% for note in bar['notes'] %}
-                <li><strong>{{ note[0] }}</strong>, string #{{ note[1] }}, fret #{{ note[2] }}</li>
+                <li>{{ note }}<</li>
             {% endfor %}
         </ul>
 

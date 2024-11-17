@@ -61,7 +61,7 @@ def home():
     return render_template("home.html")
 
 # Guitar tab display route (display parsed data)
-@app.route('/guitar_tab_display')
+@app.route('/guitar_tab_display',  methods=['POST'])
 def guitar_tab_display():
     # Retrieve the parsed output from session
     parsed_output = {
