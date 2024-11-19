@@ -1,13 +1,33 @@
 from typing import List
 
 from music21.stream import Score, Part, Measure
-from music21 import clef, note, chord, tempo
+from music21 import clef, note, chord
 
-from common.measure_data import MeasureData
-from common.tablature_note import TablatureNote
+from common.types import TablatureNote, Bar, Song
 
 
-def tab_part(score: Score) -> Part:
+def song_data(score: Score) -> Song:
+    title = score.metadata.bestTitle
+    composers = ", ".join(score.metadata.composers)
+    
+    if len(composers.strip()) == 0:
+        composers = "No composer information found."
+    
+    tab_part = _tab_part(score)
+    measures = _measure_data(tab_part)
+    
+    measure_count = len(measures)
+    desc = f"There are {measure_count} measures."
+    
+    return {
+        "title": title,
+        "composers": composers,
+        "description": desc,
+        "bars": measures
+    }
+    
+    
+def _tab_part(score: Score) -> Part:
     for part in score.parts:
         for m in part.measures(0, None):  # for some reason the first measure might not have it; check until we find one
             measure_clef = m.getContextByClass(clef.Clef)
@@ -16,14 +36,9 @@ def tab_part(score: Score) -> Part:
     
     raise Exception("tablature part not found in score")
 
-# name, composer, measure count, tempo
-def summary_data(score: Score):
-    pass
-    
-
-def measure_data(part: Part) -> List[MeasureData]:
+def _measure_data(part: Part) -> List[Bar]:
     result = []
-    
+
     curr_key = None
     curr_time = None
     curr_tempo = None
@@ -42,8 +57,14 @@ def measure_data(part: Part) -> List[MeasureData]:
         if m.timeSignature is not None:
             curr_time = m.timeSignature.ratioString
         
-        descs = [_note_and_rest_to_str(nr) for nr in m.flatten().notesAndRests]
-        result.append(MeasureData(curr_time, curr_key, descs, curr_tempo))
+        notes = [_note_and_rest_to_str(nr) for nr in m.flatten().notesAndRests]
+        bar: Bar = {
+            'time_signature': curr_time,
+            'key': curr_key,
+            'tempo': curr_tempo,
+            'notes': notes
+        }
+        result.append(bar)
         
     return result
 

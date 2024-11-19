@@ -8,7 +8,7 @@ from music21.musicxml import xmlToM21
 
 from xml.etree.ElementTree import Element
 
-from common.tablature_note import TablatureNote
+from common.types import TablatureNote
 
 class TablaturePartParser(xmlToM21.PartParser):
     def __init__(self, mxPart: Element | None = None, mxScorePart: Element | None = None, parent: xmlToM21.MusicXMLImporter | None = None):
