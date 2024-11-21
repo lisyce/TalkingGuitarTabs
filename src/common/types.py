@@ -12,6 +12,9 @@ Bar = TypedDict('Bar', {
     'time_signature': str,
     'key': str,
     'tempo': str,
+    'time_signature_changed': bool,
+    'key_changed': bool,
+    'tempo_changed': bool,
     'notes': List[str],
 })
 

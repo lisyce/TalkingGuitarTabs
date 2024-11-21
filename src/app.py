@@ -17,8 +17,7 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 
 # Allowed file extension check
 def allowed_file(filename):
-    return filename.endswith('.musicxml')
-    # return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'xml'}
+    return filename.lower().endswith('.musicxml')
 
 # Song and Bar class definitions (no changes)
 

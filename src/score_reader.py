@@ -47,22 +47,31 @@ def _measure_data(part: Part) -> List[Bar]:
             continue
         
         tempos = m.metronomeMarkBoundaries()
+        time_changed = key_changed = tempo_changed = False
         if tempos:
+            old_tempo = curr_tempo
             t0 = tempos[0][2]
             curr_tempo = f"{t0.referent.fullName} = {t0.number}"
             if t0.text:
                 curr_tempo += f" ({t0.text})"
+
+            tempo_changed = old_tempo != curr_tempo
         if m.keySignature is not None:
             curr_key = m.keySignature._strDescription()
+            key_changed = True
         if m.timeSignature is not None:
             curr_time = m.timeSignature.ratioString
+            time_changed = True
         
         notes = [_note_and_rest_to_str(nr) for nr in m.flatten().notesAndRests]
         bar: Bar = {
             'time_signature': curr_time,
             'key': curr_key,
             'tempo': curr_tempo,
-            'notes': notes
+            'notes': notes,
+            'key_changed': key_changed,
+            'tempo_changed': tempo_changed,
+            'time_signature_changed': time_changed
         }
         result.append(bar)
         
