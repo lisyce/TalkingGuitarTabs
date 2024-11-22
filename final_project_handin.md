@@ -20,6 +20,16 @@ Comptency info: You enact positive disability principals in your coursework. The
 - 3: Describes and/or critiques all concepts accurately	
 - 2: Describes and/or critiques most concepts accurately.	
 
+**Ableist**
+
+**Accessible in part or as a whole**
+
+**Disability led**
+
+**Being used to give control and improve agency for people with disabilities**
+
+**Addressing the whole community**
+
 TODO: Cara
 ## Related Work– ~3 paragraphs: Talk about relevant work that closely connects with your project.
 
@@ -40,6 +50,14 @@ TODO: Jasmine
 Competency info: You can argue for how a given technology or research project, including your own, meets or fails to meet appropriate disability principles drawn from from disability justice’s 10 principles laid out by Sins Invalid.
 - 3: Uses three or more principals correctly (including defining them and correctly explaining why they apply)	
 - 2: Uses at least two principals correctly	
+
+Disability principles: https://static1.squarespace.com/static/5bed3674f8370ad8c02efd9a/t/5f1f0783916d8a179c46126d/1595869064521/10_Principles_of_DJ-2ndEd.pdf
+
+**Intersectionality**
+
+**Anti-capitalist politics**
+
+**Sustainibility**
 
 
 TODO: Cara
