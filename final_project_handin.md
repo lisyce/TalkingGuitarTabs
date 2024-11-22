@@ -2,14 +2,49 @@
 
 **Names: Cara Lisy and Jasmine Herri**
 
-## Introduction (in plain language) – ~2 paragraphs (about 750 words): What is the problem you are solving and why is it important to solve it?
+TODO: Cara
+## Introduction (in plain language) – ~2 paragraphs (about 750 words): 
 
+Comptency info: You can follow best practices for text simplification and ensure that everyone in the disability community can benefit from information that is shared.
+- 3: Demonstrates consistent use of and understanding of five or more principles	
+- 2: Demonstrates consistent use of and understanding of four or more principles	
+
+**The problem we are solving**
+
+**Why it is important to solve this problem**
+
+TODO: Jasmine
 ## Positive Disability Principals ~3-5 paragraphs: Address the questions in this competency
 
+Comptency info: You enact positive disability principals in your coursework. These include learning and applying principals such as non-ableist language and ideas such as emphasizing agency and control and avoiding disability dongles.
+- 3: Describes and/or critiques all concepts accurately	
+- 2: Describes and/or critiques most concepts accurately.	
+
+TODO: Cara
 ## Related Work– ~3 paragraphs: Talk about relevant work that closely connects with your project.
 
-## Methodology and Results– ~6 paragraphs : What did you do in your project- what did you design or implement? What were your metrics for success, and how did you validate? This should include at least one picture of your project, with alt text.
+TODO: Jasmine first then Cara 
+## Methodology and Results– ~6 paragraphs : 
 
+**What we designed and implemented**
+
+**Metrics for success**
+
+**Validating metrics**
+
+**Image** ADD ALT TEXT
+
+TODO: Jasmine 
 ## Disability Model Analysis ~3 paragraphs (one per principal)
 
-## Learnings and future work ~1-2 paragraphs (about 400 words): Describe what you learned and how this canbe extended/ built on in the future.
+Competency info: You can argue for how a given technology or research project, including your own, meets or fails to meet appropriate disability principles drawn from from disability justice’s 10 principles laid out by Sins Invalid.
+- 3: Uses three or more principals correctly (including defining them and correctly explaining why they apply)	
+- 2: Uses at least two principals correctly	
+
+
+TODO: Cara
+## Learnings and future work ~1-2 paragraphs (about 400 words):
+
+**What we learned**
+
+**Future applications and extensions**
