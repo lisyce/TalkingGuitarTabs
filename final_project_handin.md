@@ -9,6 +9,28 @@ Comptency info: You can follow best practices for text simplification and ensure
 - 3: Demonstrates consistent use of and understanding of five or more principles	
 - 2: Demonstrates consistent use of and understanding of four or more principles	
 
+### What Are Guitar Tabs?
+
+Musicians often read sheet music to tell them how to play a song. There are many different kinds of sheet music. The most common kind is called "modern staff notation". This type of sheet music has 5 horizontal lines that tell musicians what pitch a note should be. "Pitch" is how high or low a note is.
+
+Different notes have different durations. Musicians know how long a note is based on the symbol used for the note. They read the sheet music from left to right.
+
+Below is an example of modern staff notation for the piano:
+
+![Modern staff notation of Frederic Chopin's Prelude (opus 28, number 7). The sheet music has a piano part with two lines of sheet music notation in black and white.](1920px-Chopin_Prelude_7.png)
+
+*By en:User:Prof.rick - author's "own edition and arrangement", Public Domain, https://commons.wikimedia.org/w/index.php?curid=5222815*
+
+But, some songs are not written in modern staff notation. Guitar songs are often written as "guitar tabs". Guitar tabs are a different kind of sheet music. They have six horizontal lines, not 5. There is one line for each string on the guitar.
+
+A number on a line tells the musician what "fret" they should play. Guitar players push down on the strings in different places to make different notes. The location they push down on is called a "fret". Guitar tabs are also read from left to right.
+
+Below is an example of a guitar tab:
+
+![alt](Guitar_tablature_sample.png)
+
+*By Bitethesilverbullet - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=68432164*
+
 ### The problem we are solving
 
 ### Why it is important to solve this problem
