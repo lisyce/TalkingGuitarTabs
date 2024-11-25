@@ -33,7 +33,24 @@ Below is an example of a guitar tab:
 
 ### The problem we are solving
 
+Musicians have to be able to see clearly to read guitar tabs. So, people who are blind or low vision might not be able to read them easily. 
+Sometimes, they may listen to a song and try to play what they hear. But, this can be hard to do for many people, whether they can read guitar tabs or not. Our project is a possible solution to this problem.
+
+A Talking Score has the same information as sheet music, but the information is written with words rather than symbols. People can use screen readers to read the Talking Score out loud.
+This way, they can learn the information in the sheet music and do not need to be able to see it. Talking Scores already exist for modern staff notation.
+They tell users note names and lengths so that they can have all of the information from the sheet music. Visit the [Talking Scores Project](https://www.talkingscores.org/) to learn more.
+
+However, we could not find Talking Scores for guitar tabs. A guitar tab Talking Score should tell people the string number and fret number for a note, not the name of the note. So, our project is a Talking Score that is specific to guitar tabs.
+
 ### Why it is important to solve this problem
+
+Some musicians may be unable to see sheet music, but you do not need to be able to see to play an instrument. All musicians should have access to sheet music in some way.
+Talking Scores are an accessible format for sheet music and we can expand on this idea. This way, guitarists can access the type of sheet music made for their instrument,
+regardless of if they can't see well.
+
+Music is very important to many people. It is a way to relax and to build community by playing with other people. Blind and low vision people deserve
+access to these benefits of playing music just as much as sighted people do. They should be able to access the information in sheet music independently.
+By making an accessible website where they can convert sheet music to a Talking Guitar Tab, they can perform this task themselves.
 
 ## Positive Disability Principals ~3-5 paragraphs: Address the questions in this competency
 
@@ -92,7 +109,7 @@ One of the key things we implemented was the toggle under Fomratting Options tha
 ### Validating metrics
 To validate our metrics, we tested the web application with a screen reader to check the keyboard navigation and aria labels. We made there that there were no empty lines being read aloud and that users have the autonomy to skip over information they may not want to listen while still maintianing the flow of the music. We then ran out web application through an automated checker for WCAG guidelines to ensure those are met, making adjustments accordingly. 
 
-### Image ADD ALT TEXT
+### Image ADD ALT TEXT (still need this? images above)
 
 ## Disability Model Analysis ~3 paragraphs (one per principal)
 
