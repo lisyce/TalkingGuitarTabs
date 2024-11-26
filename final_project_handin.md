@@ -69,7 +69,6 @@ This product definitely gives controls and improves agency for people with disab
 ### Addressing the whole community
 This product does not address the whole community because it is specifically tailored towards individuals with visual or cognitive disabilities. This product would not be effective for those with hearing impairments since the output either textual but in a different format than before or auditory with a screen reader. It also does not directly address nor exclude those with mobility issues. Even though the product is not aimed to be incredibly complex to use, the goal was not to improve mobility concerns for musicians.
 
-TODO: Cara
 ## Related Work– ~3 paragraphs: Talk about relevant work that closely connects with your project.
 
 ### Talking Scores 
