@@ -91,7 +91,6 @@ There are guidelines for proper modified stave notation that must be met for acc
 
 There are also some modifications to general MSN such as have different colors for different notes. This helps musicians with reading disabilities such as dyslexia. 
 
-TODO: Cara reads over Jasmine's work 
 ## Methodology and Results: 
 
 ### What we designed and implemented
