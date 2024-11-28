@@ -2,12 +2,7 @@
 
 **Names: Cara Lisy and Jasmine Herri**
 
-TODO: Cara
-## Introduction (in plain language) – ~2 paragraphs (about 750 words): 
-
-Comptency info: You can follow best practices for text simplification and ensure that everyone in the disability community can benefit from information that is shared.
-- 3: Demonstrates consistent use of and understanding of five or more principles	
-- 2: Demonstrates consistent use of and understanding of four or more principles	
+## Introduction (in plain language) 
 
 ### What Are Guitar Tabs?
 
@@ -23,7 +18,9 @@ Below is an example of modern staff notation for the piano:
 
 But, some songs are not written in modern staff notation. Guitar songs are often written as "guitar tabs". Guitar tabs are a different kind of sheet music. They have six horizontal lines, not 5. There is one line for each string on the guitar.
 
-A number on a line tells the musician what "fret" they should play. Guitar players push down on the strings in different places to make different notes. The location they push down on is called a "fret". Guitar tabs are also read from left to right.
+A number on a line tells the musician what "fret" they should play. Guitar players push down on the strings in different places to make different notes. The location they push down on is called a "fret".
+
+Note symbols above and below the numbers tell musicians how long to play each note. They are very similar to the symbols used in modern staff notation. Guitar tabs are read from left to right, just like modern staff notation.
 
 Below is an example of a guitar tab:
 
@@ -34,10 +31,12 @@ Below is an example of a guitar tab:
 ### The problem we are solving
 
 Musicians have to be able to see clearly to read guitar tabs. So, people who are blind or low vision might not be able to read them easily. 
-Sometimes, they may listen to a song and try to play what they hear. But, this can be hard to do for many people, whether they can read guitar tabs or not. Our project is a possible solution to this problem.
+Sometimes, they may listen to a song and try to play what they hear. But, this can be hard to do for many people, whether they can read guitar tabs or not. It usually takes lots of practice to be good at playing what you hear. Guitar tabs tell musicians exactly what they should play. Our project is an accessible format for guitar tabs.
 
 A Talking Score has the same information as sheet music, but the information is written with words rather than symbols. People can use screen readers to read the Talking Score out loud.
-This way, they can learn the information in the sheet music and do not need to be able to see it. Talking Scores already exist for modern staff notation.
+This way, they can learn the information in the sheet music. They do not need to be able to see it.
+
+Talking Scores already exist for modern staff notation.
 They tell users note names and lengths so that they can have all of the information from the sheet music. Visit the [Talking Scores Project](https://www.talkingscores.org/) to learn more.
 
 However, we could not find Talking Scores for guitar tabs. A guitar tab Talking Score should tell people the string number and fret number for a note, not the name of the note. So, our project is a Talking Score that is specific to guitar tabs.
@@ -45,14 +44,16 @@ However, we could not find Talking Scores for guitar tabs. A guitar tab Talking 
 ### Why it is important to solve this problem
 
 Some musicians may be unable to see sheet music, but you do not need to be able to see to play an instrument. All musicians should have access to sheet music in some way.
-Talking Scores are an accessible format for sheet music and we can expand on this idea. This way, guitarists can access the type of sheet music made for their instrument,
-regardless of if they can't see well.
+Talking Scores are an accessible format for sheet music. With Talking Guitar Tabs, guitarists can access the type of sheet music made for their instrument, even if they can't see well.
 
-Music is very important to many people. It is a way to relax and to build community by playing with other people. Blind and low vision people deserve
-access to these benefits of playing music just as much as sighted people do. They should be able to access the information in sheet music independently.
-By making an accessible website where they can convert sheet music to a Talking Guitar Tab, they can perform this task themselves.
+Music is very important to many people. It can help people relax and feel better. It is also a way to make friends by playing for others and with others. Blind and low vision people deserve
+access to these benefits of playing music just as much as sighted people do. They should be able to access the information in sheet music on their own.
 
-## Positive Disability Principals ~3-5 paragraphs: Address the questions in this competency
+By making an accessible website where they can convert sheet music to a Talking Guitar Tab, blind and low-vision people can perform this task themselves. They can download a musicXML file from a website like [MuseScore](https://musescore.org/en). Or, they can make a guitar tab in a sheet music editor and convert it to musicXML there. Then, they just need to upload it into the Talking Guitar Tabs website.
+
+Our goal is to make music more accessible to everyone. We hope that this project can help more guitarists access useful guitar tabs.
+
+## Positive Disability Principals
 
 ### Ableist
 This technology is not ableist. It is tailored specifically for people with low vision, reading, or cognitive processing disabilities that results in it being difficult to read guitar tabs. This project tackles the visual barrier of guitar tabs and converts them into an textual and potentially auditory form when read with a screen reader. While this product does not only have to be used by people with disabilities, it is not discriminatory against disabled individuals. It can be used by anyone who either needs or prefers non-visual musical representation whether they are disabled or not. This includes people who are visually impaired or people who are auditory learners. This product is also not a disability dongle because both of our first person accounts explained the difficulties of reading existing sheet music. Therefore, the Talking Guitar Tabs web application is a reasonable solution for a real problem in the disabled community. 
@@ -69,7 +70,7 @@ This product definitely gives controls and improves agency for people with disab
 ### Addressing the whole community
 This product does not address the whole community because it is specifically tailored towards individuals with visual or cognitive disabilities. This product would not be effective for those with hearing impairments since the output either textual but in a different format than before or auditory with a screen reader. It also does not directly address nor exclude those with mobility issues. Even though the product is not aimed to be incredibly complex to use, the goal was not to improve mobility concerns for musicians.
 
-## Related Work– ~3 paragraphs: Talk about relevant work that closely connects with your project.
+## Related Work
 
 ### Talking Scores 
 Talking Scores is a project developed by Peter Merchant, a visually-impaired musician, whic is a way to represent sheet music such that it can be read aloud. Specifically, it splits up sheet music by bar and displays the specific notes to be played in each bar. This is where we got the initial inspiration for our project, we just a more specific version for Guitar Tabs as opposed to regular sheet music. Talking Scores allows users to have a more interactive experience with music, permitting them to repeat bars, change tempo, add a metronome, and more. It also provides imperative information such as patterns in the score while ensuring that not too much information is being crammed into a tight space. Below is an image of the Talking Scores output. 
@@ -91,11 +92,12 @@ There are guidelines for proper modified stave notation that must be met for acc
 There are also some modifications to general MSN such as have different colors for different notes. This helps musicians with reading disabilities such as dyslexia. 
 
 TODO: Cara reads over Jasmine's work 
-## Methodology and Results– ~6 paragraphs : 
+## Methodology and Results: 
 
 ### What we designed and implemented
 We designed a Flask application that takes in a .musicXML file and then parses it into a text format that can be read by a screen reader. The output of the file parser looks like this:
 
+```
 h1: Title
     h2: Song summary
         Composer
@@ -111,6 +113,7 @@ h1: Title
             - <note duration>, <string #, fret #>
         h3: Measure 2
             Etc. 
+```           
 
 Specifically, we extracted the time signature, key, and tempo for each measure. We also extracted the notes and chords of the measure. We then placed this information into a customized dictionary as the output of our parser. 
 
@@ -129,7 +132,7 @@ To validate our metrics, we tested the web application with a screen reader to c
 
 ### Image ADD ALT TEXT (still need this? images above)
 
-## Disability Model Analysis ~3 paragraphs (one per principal)
+## Disability Model Analysis
 
 Competency info: You can argue for how a given technology or research project, including your own, meets or fails to meet appropriate disability principles drawn from from disability justice’s 10 principles laid out by Sins Invalid.
 - 3: Uses three or more principals correctly (including defining them and correctly explaining why they apply)	
@@ -159,12 +162,19 @@ Music is a key component of many cultures and religions. Thus, music is an imper
 The Anti-capitalist Politics principle refers to the rejection of a system that prioritizes those who are able-bodied, of the racial majority (typically White), and are gender normative. The rejetion of this system discourages competing for survival and encourages all contributions from all sorts of people.
 
 #### Analysis
-While this project (and music itself) is not inherently political, it has the power to both embody and fail to embody this principle depending on how it’s employed. Music can be a leisurely activity, giving listeners a break to feel their emotions or connect with others' emotions. By increasing accessibility for sheet music, we can increase accessibility to making music and the leisurely experience of listening to it. However, music is often also a means to profit. To embody this principle, accessible sheet music formats cannot be a reason to make more monetizable music, but rather more music for enjoyment. Thus, this project does not encourage montetary advancement or competiting for survivial but rather emphasizes additional modes of musical access.
+While this project (and music itself) is not inherently political, it has the power to both embody and fail to embody this principle depending on how it’s employed. Music can be a leisurely activity, giving listeners a break to feel their emotions or connect with others' emotions. By increasing accessibility for sheet music, we can increase accessibility to making music and the leisurely experience of listening to it. However, music is often also a means to profit. To embody this principle, accessible sheet music formats cannot be a reason to make more monetizable music, but rather more music for enjoyment. Thus, this project does not encourage montetary advancement or competing for survivial but rather emphasizes additional modes of musical access.
 
 
-TODO: Cara
-## Learnings and future work ~1-2 paragraphs (about 400 words):
+## Learnings and future work:
 
 ### What we learned
 
+We faced many challenges when designing and implementing our Talking Guitar Tabs project. Most of our struggles came from the variety of formatting within exported musicXML files. Despite it being a standardized format, there are a variety of ways to notate the same thing and the music21 library we extended for parsing did not always cover all edge cases. Often, the exported musicXML is only as easy-to-parse as the original guitar tabs are well-written. Poorly- or unconventionally-notated sheet music can limit accessibility because it creates hard-to-interpret musicXML. Composers and transcribers of guitar tabs can make their scores more accessible to other programs such as our project by using simpler notation.
+
 ### Future applications and extensions
+
+There are a variety of features that could be added to our project to make it more robust and convey more of the information found in guitar tabs and increase accessibility. There is a variety of musical notation that is important to support in future works to increase parity with written notationi. This includes structural elements like repeats, note and rhythm details like ties and articulations, and guitar specific notation like hammer-ons and pull-offs.
+
+Additionally, there are some features that the original Talking Scores project has that blind and low-vision individuals have said are beneficial to them. This includes the ability to play the midi representation of selected measures so users can listen to the score that the text represents.
+
+We hope to see continued improvement in accessibility for music scores so that everyone can enjoy playing music.
