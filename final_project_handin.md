@@ -99,15 +99,14 @@ On the Flask side, we have a home page template and a guitar_tab_template. The h
 
 One of the key things we implemented was the toggle under Fomratting Options that controls whether the user sees the the time, key, and tempo every measure. This toggle is automatically set to true when the page laods. When it is set to false, then the time, key, and tempo are only displayed if they change. For example, if the tempo is different in Measure 3 than in Measure 2 then the tempo will be dislayed in Measure 3. Since the time sigature and the key didn't change, they are not displayed in Measure 3. 
 
-### Image ADD ALT TEXT (still need this? images above)
+Here is an example output of our web application. 
 
+![This is a screenshot of the web application output The text reads as follows: (h1) Bella Ciao (h2) Song Summary (p) Composer: No composer information found. (p) There are 14 measures.(h2) Formatting Options (toggle: True) Show time, key, and tempo every measure (h2) Measures (h3) Measure 1 (p) Time Signature: 4/4 (p) Key: no sharps or flats (p) Tempo: Quarter = 105 (p) Half rest, Eighth rest, Eighth string 3 fret 2, Eighth string 3 fret 1, Eighth string 4 fret 3](Bella_Ciao_Parsed.png)
 ## Disability Model Analysis
 
 Competency info: You can argue for how a given technology or research project, including your own, meets or fails to meet appropriate disability principles drawn from from disability justice’s 10 principles laid out by Sins Invalid.
 - 3: Uses three or more principals correctly (including defining them and correctly explaining why they apply)	
 - 2: Uses at least two principals correctly	
-
-Disability principles: https://static1.squarespace.com/static/5bed3674f8370ad8c02efd9a/t/5f1f0783916d8a179c46126d/1595869064521/10_Principles_of_DJ-2ndEd.pdf
 
 ### Recognizing Wholeness
 
