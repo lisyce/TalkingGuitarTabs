@@ -70,27 +70,6 @@ This product definitely gives controls and improves agency for people with disab
 ### Addressing the whole community
 This product does not address the whole community because it is specifically tailored towards individuals with visual or cognitive disabilities. This product would not be effective for those with hearing impairments since the output either textual but in a different format than before or auditory with a screen reader. It also does not directly address nor exclude those with mobility issues. Even though the product is not aimed to be incredibly complex to use, the goal was not to improve mobility concerns for musicians.
 
-## Related Work
-
-### Talking Scores 
-Talking Scores is a project developed by Peter Merchant, a visually-impaired musician, whic is a way to represent sheet music such that it can be read aloud. Specifically, it splits up sheet music by bar and displays the specific notes to be played in each bar. This is where we got the initial inspiration for our project, we just a more specific version for Guitar Tabs as opposed to regular sheet music. Talking Scores allows users to have a more interactive experience with music, permitting them to repeat bars, change tempo, add a metronome, and more. It also provides imperative information such as patterns in the score while ensuring that not too much information is being crammed into a tight space. Below is an image of the Talking Scores output. 
-
-![This is a photo of a sample output from the Talking Scores music application. At the top is a title "Talking Scores" underneath which there are 3 tabs stacked vertically that read from top to bottom: "Pedal 1, Pedal 1 Long, Pedal 1 Double." Under the Pedal 1 Double tab there is a checked box that reads "Display speech recognition array." Beneath there is a tab titled "Rcognise Speech." Within that tab, there is an example of the music sheet output that reads " bar 1: 2 note chord manim A #, and E 4" and beneath that there is a line that reads "bar 2: 3 note chord minim A3, D 4, and E"](talking_scores.png)
-
-### Modified Stave Notation 
-Modified stave notation (MSN) is an alternative method of music notation which is commonly used by those who are visually impaired. Some key differences between MSN and typical sheet music is that it uses thick, contiguous lines and larger symbols. It also reduces gaps and includes verbal descriptions for unusual symbols. Overall, MSN is a more standardized method of sheet music where things such as spacing, descriptions, and even color are consistent. Below is an image that compared different kinds of stave notation, including an example of MSN.
-
-![An image of three sheet different music notations for Fur Elise. At the top, there is a label "Standard stave notation" with the work "poco moto" written to the upper left of the sheet music. There is then a snippet of standard stave notation sheet music from Fur Elise. Under that, is there is a label "Braille Music" which shows the braille music version of the same snippet from Fur Elise. Under this example, there is text that reads "Raised dots enable blind musicians to read music by touch." The last example is labelled "Modified Stave Notation" and shows that MSN version of the same snippet again from Fur Elise. At the bottom there is text that reads: "MSN uses thicker lines and large font sizes to aid partially sighted musicians. Different colors can help musicians with reading disabilities such as dyslexia."](modified_stave_notation_example.png)
-
-There are guidelines for proper modified stave notation that must be met for accessibility purposes:
-- clear printing of symbols with no overlapping signs 
-- even symbol size and density ratio 
-- limited redundant space 
-- replace unusual symbols with word descriptions 
-- place symbols at a consistent distance from lines and notes
-
-There are also some modifications to general MSN such as have different colors for different notes. This helps musicians with reading disabilities such as dyslexia. 
-
 ## Methodology and Results: 
 
 ### What we designed and implemented
@@ -119,15 +98,6 @@ Specifically, we extracted the time signature, key, and tempo for each measure. 
 On the Flask side, we have a home page template and a guitar_tab_template. The home page accept the .musicXML file through a form submission and the guitar_tab_template shows the parsed results. 
 
 One of the key things we implemented was the toggle under Fomratting Options that controls whether the user sees the the time, key, and tempo every measure. This toggle is automatically set to true when the page laods. When it is set to false, then the time, key, and tempo are only displayed if they change. For example, if the tempo is different in Measure 3 than in Measure 2 then the tempo will be dislayed in Measure 3. Since the time sigature and the key didn't change, they are not displayed in Measure 3. 
-
-### Metrics for success
-- Web application is keyboard navigable
-- HTML output of the MusicXML file is navigable with a screen reader 
-- Web application meets WCAG guidalines for font size, colors, spacing, etc. 
-- Appropriate aria labels on HTML components
-
-### Validating metrics
-To validate our metrics, we tested the web application with a screen reader to check the keyboard navigation and aria labels. We made there that there were no empty lines being read aloud and that users have the autonomy to skip over information they may not want to listen while still maintianing the flow of the music. We then ran out web application through an automated checker for WCAG guidelines to ensure those are met, making adjustments accordingly. 
 
 ### Image ADD ALT TEXT (still need this? images above)
 
