@@ -24,7 +24,7 @@ Note symbols above and below the numbers tell musicians how long to play each no
 
 Below is an example of a guitar tab:
 
-![alt](Guitar_tablature_sample.png)
+![A piece of sheet music notated as 6-string guitar tabs. It has only 3 measures in black and white, with no title or composer listed.](Guitar_tablature_sample.png)
 
 *By Bitethesilverbullet - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=68432164*
 
