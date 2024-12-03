@@ -31,7 +31,9 @@ Below is an example of a guitar tab:
 ### The problem we are solving
 
 Musicians have to be able to see clearly to read guitar tabs. So, people who are blind or low vision might not be able to read them easily. 
-Sometimes, they may listen to a song and try to play what they hear. But, this can be hard to do for many people, whether they can read guitar tabs or not. It usually takes lots of practice to be good at playing what you hear. Guitar tabs tell musicians exactly what they should play. Our project is an accessible format for guitar tabs.
+Sometimes, they may listen to a song and try to play what they hear. But, this can be hard to do for many people, whether they can read guitar tabs or not.
+It usually takes lots of practice to be good at playing what you hear. Guitar tabs tell musicians exactly what they should play.
+Our project is an accessible format for guitar tabs: A Talking Score.
 
 A Talking Score has the same information as sheet music, but the information is written with words rather than symbols. People can use screen readers to read the Talking Score out loud.
 This way, they can learn the information in the sheet music. They do not need to be able to see it.
@@ -39,14 +41,14 @@ This way, they can learn the information in the sheet music. They do not need to
 Talking Scores already exist for modern staff notation.
 They tell users note names and lengths so that they can have all of the information from the sheet music. Visit the [Talking Scores Project](https://www.talkingscores.org/) to learn more.
 
-However, we could not find Talking Scores for guitar tabs. A guitar tab Talking Score should tell people the string number and fret number for a note, not the name of the note. So, our project is a Talking Score that is specific to guitar tabs.
+However, we could not find Talking Scores for guitar tabs. A guitar tab Talking Score should tell people the string number and fret number for a note, not the name of the note. We built our project to solve this problem.
 
 ### Why it is important to solve this problem
 
 Some musicians may be unable to see sheet music, but you do not need to be able to see to play an instrument. All musicians should have access to sheet music in some way.
 Talking Scores are an accessible format for sheet music. With Talking Guitar Tabs, guitarists can access the type of sheet music made for their instrument, even if they can't see well.
 
-Music is very important to many people. It can help people relax and feel better. It is also a way to make friends by playing for others and with others. Blind and low vision people deserve
+Music is very important to many people. It can help people relax and feel better. It is also a way to make friends by playing in groups. Blind and low vision people deserve
 access to these benefits of playing music just as much as sighted people do. They should be able to access the information in sheet music on their own.
 
 By making an accessible website where they can convert sheet music to a Talking Guitar Tab, blind and low-vision people can perform this task themselves. They can download a musicXML file from a website like [MuseScore](https://musescore.org/en). Or, they can make a guitar tab in a sheet music editor and convert it to musicXML there. Then, they just need to upload it into the Talking Guitar Tabs website.
@@ -56,16 +58,18 @@ Our goal is to make music more accessible to everyone. We hope that this project
 ## Positive Disability Principals
 
 ### Ableist
-This technology is not ableist. It is tailored specifically for people with low vision, reading, or cognitive processing disabilities that results in it being difficult to read guitar tabs. This project tackles the visual barrier of guitar tabs and converts them into an textual and potentially auditory form when read with a screen reader. While this product does not only have to be used by people with disabilities, it is not discriminatory against disabled individuals. It can be used by anyone who either needs or prefers non-visual musical representation whether they are disabled or not. This includes people who are visually impaired or people who are auditory learners. This product is also not a disability dongle because both of our first person accounts explained the difficulties of reading existing sheet music. Therefore, the Talking Guitar Tabs web application is a reasonable solution for a real problem in the disabled community. 
+This technology is not ableist. It is tailored specifically for people with low vision, reading, or cognitive processing disabilities that results in it being difficult to read guitar tabs. This project tackles the visual barrier of guitar tabs and converts them into an textual and potentially auditory form when read with a screen reader. While this product does not only have to be used by people with disabilities, it is not discriminatory against disabled individuals. It can be used by anyone who either needs or prefers non-visual musical representation whether they are disabled or not. This includes people who are visually impaired or people who are auditory learners. This product is also not a disability dongle because both of our first person accounts explained the difficulties of reading existing sheet music. Our project is also based off of the original Talking Scores project, which was designed and built by people who are blind or have low vision. Therefore, the Talking Guitar Tabs web application is a reasonable solution for a real problem in the disabled community. 
 
 ### Accessible in part or as a whole
-This product is accessible as a whole. It completely translates visual guitar tabs into a textual and auditory form. It is not a partial translation nor does it require a significant amount of user action. This translation includes all imperative information in the original sheet music including key, time signature, and tempo per measure. The Talking Guitar Tabs web application also provides users with the option of showing this information for every measure or not. Therefore, not only are the guitar tabs more accessible in the app, but users are given autonomy in how they want to use it, giving them more control on how they process the music being interpreted. This app also addresses a variety of disabilities ranging from low vision/blindness to dyslexia and cognitive-processing disorders. Thus, this app reaches many different groups within the disabled community, contributing to its accessibilty as a whole. 
+This product is accessible as a whole. It translates visual guitar tabs into a textual and auditory form. It does not require a significant amount of user action. This translation includes imperative information in the original sheet music including key, time signature, and tempo in each measure. The Talking Guitar Tabs web application also provides users with the option of showing this information for every measure or not. Therefore, not only are the guitar tabs more accessible in the app, but users are given autonomy in how they want to use it, giving them more control on how they process the music being interpreted. This app also addresses a variety of disabilities ranging from low vision/blindness to dyslexia and cognitive-processing disorders. Thus, this app reaches many different groups within the disability community, contributing to its accessibilty as a whole. 
+
+It is worth noting that there is still opportunity for improving the translation by including accidentals, articulation, and more in the original sheet music to reach full 1:1 parity, but we have chosen the elements we deemed most crucial to interpreting the music to implement given the time frame. More parity would yield better accessibility of the original guitar tab source material.
 
 ### Disability led
 This product is not disability led. Neither of the group members possess the visual or cognitive disabilities that could benefit from this product. However, as previously mentioned, this product is not limited to use by disabled individuals only. It can also be used by people who simply prefer auditory instruction over visual cues. Moreover, we based this product on multiple first-person accounts by people with disabilities as described in our proposal. These first-person accounts detailed the difficulties of visual music reading from their personal experience, supporting the development of this product.
 
 ### Being used to give control and improve agency for people with disabilities
-This product definitely gives controls and improves agency for people with disabilities. It allows individuals to choose what method they want to learn music in. Even within this app, with the textual representation of the music, users can both magnify the text for interpretation or use a screen reader to read the information aloud. This, this web app frees users from the limitations of textual sheet music in multiple ways. Also, in the Concert Band and Low Vision first person account, the writer talked about  how “a school paraprofessional would resize my music on larger paper and print it horizontally, and my directors would work with me to ensure no notes or important symbols were cut off.” This tool with remove the dependence on other people to provide accessible music, improving agency for people with disabilities.  In addition, as previously mentioned, the Talking Guitar Tabs web application also provides users with the option of showing the key, time signature, and tempo for every measure or not. Therefore, users are given autonomy in how they want to use the app, giving them more control on how they process the music they want to interpret.
+This product definitely gives controls and improves agency for people with disabilities. It allows individuals to choose what method they want to learn music in. Even within this app, with the textual representation of the music, users can both magnify the text for interpretation or use a screen reader to read the information aloud. This, this web app frees users from the limitations of textual sheet music in multiple ways. Also, in the Concert Band and Low Vision first person account, the writer talked about how “a school paraprofessional would resize my music on larger paper and print it horizontally, and my directors would work with me to ensure no notes or important symbols were cut off.” This tool with remove the dependence on other people to provide accessible music, improving agency for people with disabilities. In addition, as previously mentioned, the Talking Guitar Tabs web application also provides users with the option of showing the key, time signature, and tempo for every measure or not. Therefore, users are given autonomy in how they want to use the app, giving them more control on how they process the music they want to interpret.
 
 ### Addressing the whole community
 This product does not address the whole community because it is specifically tailored towards individuals with visual or cognitive disabilities. This product would not be effective for those with hearing impairments since the output either textual but in a different format than before or auditory with a screen reader. It also does not directly address nor exclude those with mobility issues. Even though the product is not aimed to be incredibly complex to use, the goal was not to improve mobility concerns for musicians.
@@ -99,15 +103,7 @@ On the Flask side, we have a home page template and a guitar_tab_template. The h
 
 One of the key things we implemented was the toggle under Fomratting Options that controls whether the user sees the the time, key, and tempo every measure. This toggle is automatically set to true when the page laods. When it is set to false, then the time, key, and tempo are only displayed if they change. For example, if the tempo is different in Measure 3 than in Measure 2 then the tempo will be dislayed in Measure 3. Since the time sigature and the key didn't change, they are not displayed in Measure 3. 
 
-### Image ADD ALT TEXT (still need this? images above)
-
 ## Disability Model Analysis
-
-Competency info: You can argue for how a given technology or research project, including your own, meets or fails to meet appropriate disability principles drawn from from disability justice’s 10 principles laid out by Sins Invalid.
-- 3: Uses three or more principals correctly (including defining them and correctly explaining why they apply)	
-- 2: Uses at least two principals correctly	
-
-Disability principles: https://static1.squarespace.com/static/5bed3674f8370ad8c02efd9a/t/5f1f0783916d8a179c46126d/1595869064521/10_Principles_of_DJ-2ndEd.pdf
 
 ### Recognizing Wholeness
 
