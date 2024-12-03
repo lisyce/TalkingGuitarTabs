@@ -106,6 +106,7 @@ One of the key things we implemented was the toggle under Fomratting Options tha
 Here is an example output of our web application. 
 
 ![This is a screenshot of the web application output The text reads as follows: (h1) Bella Ciao (h2) Song Summary (p) Composer: No composer information found. (p) There are 14 measures.(h2) Formatting Options (toggle: True) Show time, key, and tempo every measure (h2) Measures (h3) Measure 1 (p) Time Signature: 4/4 (p) Key: no sharps or flats (p) Tempo: Quarter = 105 (p) Half rest, Eighth rest, Eighth string 3 fret 2, Eighth string 3 fret 1, Eighth string 4 fret 3](Bella_Ciao_Parsed.png)
+
 ## Disability Model Analysis
 
 ### Recognizing Wholeness
