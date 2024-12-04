@@ -10,6 +10,8 @@ Additionally, there are some features that the original Talking Scores project h
 
 We hope to see continued improvement in accessibility for music scores so that everyone can enjoy playing music.
 
+(Built by [@lisyce](https://github.com/lisyce) and [@jasherri](https://github.com/JasmineHerri))
+
 ## Setup
 
 From within `src/`:
