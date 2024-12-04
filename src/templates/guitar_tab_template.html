@@ -54,7 +54,7 @@
 
     <!-- Loop through each bar in the description -->
     {% for bar in bars %}
-        <h3>Measure {{ loop.index }}</h3> <!-- Use loop.index to get the current bar number -->
+        <h3 class="mt-3 mb-2">Measure {{ loop.index }}</h3> <!-- Use loop.index to get the current bar number -->
 
         <!-- Bar Details -->
         <p class="hideable{{' changed' if bar['time_signature_changed'] }}"><strong>Time Signature:</strong> {{ bar['time_signature'] }}</p>
@@ -62,11 +62,9 @@
         <p class="hideable{{' changed' if bar['tempo_changed'] }}"><strong>Tempo:</strong> {{ bar['tempo'] }}</p>
 
         <!-- Notes for Bar -->
-        <ul>
-            {% for note in bar['notes'] %}
-                <li>{{ note }}</li>
-            {% endfor %}
-        </ul>
+        {% for note in bar['notes'] %}
+            <p>{{ note }}</p>
+        {% endfor %}
 
     {% endfor %}
 </div>

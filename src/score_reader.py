@@ -80,7 +80,9 @@ def _measure_data(part: Part) -> List[Bar]:
         
 def _note_and_rest_to_str(nr: note.GeneralNote) -> str:
     if type(nr) == TablatureNote:
-        return f"{nr.duration.fullName} string {nr.string} fret {nr.fret}"
+        fret = f"fret {nr.fret}" if nr.fret > 0 else "open"
+        
+        return f"{nr.duration.fullName} string {nr.string} {fret}"
     elif type(nr) == chord.Chord:
         notes_str = ", ".join([_note_and_rest_to_str(n) for n in nr.notes])
         return f"{len(nr.notes)}-note chord: {notes_str}"
